@@ -1,0 +1,102 @@
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <img src="../assets/hot.jpg" *ngIf="weatherData.current_weather.temperature > 15">
+    <img src="../assets/cold.png" *ngIf="weatherData.current_weather.temperature <= 15">
+    
+    <div class = "weather-data">
+      <div class="location">New York</div>
+      <div class="temperature">{{weatherData.current_weather.temperature | number: '1.0-0'}}ºC</div>
+    </div>
+  </div>
+    <div class="lower-data">
+        <div class="more-info-label">
+          More weather data 
+          </div>
+          <div class="more-info-container">
+
+    
+          <div class="info-block">
+            <div class="info-block-label">
+              <img src="../assets/humid.png" >
+              <span>Humidity</span>
+            </div>
+            <div class="info-block-value">
+              77%
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/wind.png" >
+            <span>Windspeed</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.current_weather.windspeed}} MPH
+        </div>
+      </div>
+
+     </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+  <div class="upper-data">
+    <img src="../assets/hot.jpg" *ngIf="40 > 50">
+    <img src="../assets/cold.png" *ngIf="40 <= 50">
+    
+    <div class = "weather-data">
+      <div class="location">New York</div>
+      <div class="temperature">{{50.5 | number: '1.0-0'}}ºF</div>
+    </div>
+  </div>
+    <div class="lower-data">
+        <div class="more-info-label">
+          More weather data 
+          </div>
+          <div class="more-info-container">
+
+              <div class="info-block">
+              <div class="info-block-label">
+                <img src="../assets/min.png" >
+                <span>Min temp</span>
+              </div>
+              <div class="info-block-value">
+                10ºF
+            </div>
+          </div>
+
+            <div class="info-block">
+              <div class="info-block-label">
+                <img src="../assets/max.png" >
+                <span>Max temp</span>
+              </div>
+              <div class="info-block-value">
+                60ºF
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-label">
+              <img src="../assets/humid.png" >
+              <span>Humidity</span>
+            </div>
+            <div class="info-block-value">
+              77%
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/wind.png" >
+            <span>Windspeed</span>
+          </div>
+          <div class="info-block-value">
+            11 MPH
+        </div>
+      </div>
+
+     </div>
+  </div>
+</div> -->
+<router-outlet></router-outlet>
